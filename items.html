@@ -44,7 +44,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/logged_in.html"
+                href="https://ojasvi886.github.io/sparakthon_/logged_in.html"
                 >Home</a
               >
 
@@ -53,7 +53,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/bill.html"
+                href="https://ojasvi886.github.io/sparakthon_/bill.html"
                 >Bill</a
               >
 
@@ -62,7 +62,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/history.html"
+                href="https://ojasvi886.github.io/sparakthon_/history.html"
                 >History</a
               >
 
@@ -90,9 +90,7 @@
             </li>
           </ul>
           <form class="d-flex">
-            <a
-              href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html"
-            >
+            <a href="https://ojasvi886.github.io/sparakthon_/cart.html">
               <img
                 src="cart upload.png"
                 alt="search"
@@ -100,7 +98,7 @@
                 style="cursor: pointer"
               />
             </a>
-            <!-- Cart link will be added-->
+            <!-- Cart link is added-->
           </form>
         </div>
       </div>
@@ -126,14 +124,16 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 1" width="100%" height="225" />
+              <img src="kurkure.jpg" alt="prod 1" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Kurkure Masala Munch<br />
+                  <b>Price :</b> Rs. 10
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
                       id="addToCartButton1"
-                      onclick="clicks()"
                       style="
                         margin: 2em;
                         background-color: black;
@@ -144,11 +144,6 @@
                       Add to Cart
                     </button>
                     <script>
-                      function clicks() {
-                        alert("Item added to cart!!");
-                      }
-                    </script>
-                    <script>
                       document
                         .getElementById("addToCartButton1")
                         .addEventListener("click", function () {
@@ -158,14 +153,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -177,9 +196,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 2" width="100%" height="225" />
+              <img src="coke.jpg" alt="prod 2" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Coca Cola <br />
+                  <b>Price :</b> Rs. 40
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -203,14 +225,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -222,9 +268,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 3" width="100%" height="225" />
+              <img src="lays.jpg" alt="prod 3" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Lays Classic Salted<br />
+                  <b>Price :</b> Rs. 20
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -248,14 +297,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -267,9 +340,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 4" width="100%" height="225" />
+              <img src="aata.jpg" alt="prod 4" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Aashirvaad Select Aata <br />
+                  <b>Price :</b> Rs. 259
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -293,14 +369,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -312,9 +412,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 5" width="100%" height="225" />
+              <img src="surf.jpg" alt="prod 5" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Surf Excel Easy Wash 1/2 kg <br />
+                  <b>Price :</b> Rs. 79
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -338,14 +441,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -357,9 +484,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 6" width="100%" height="225" />
+              <img src="comfort.jpg" alt="prod 6" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Comfort Fabric Conditioner 220 ml <br />
+                  <b>Price :</b> Rs. 53
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -383,14 +513,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -402,9 +556,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 7" width="100%" height="225" />
+              <img src="oil.jpg" alt="prod 7" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Fortune Sunflower Oil 1L<br />
+                  <b>Price :</b> Rs. 299
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -428,14 +585,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -447,9 +628,17 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 8" width="100%" height="225" />
+              <img
+                src="mustard oil.jpg"
+                alt="prod 8"
+                width="100%"
+                height="225"
+              />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Fortune Kachi Ghani Mustard Oil 1L <br />
+                  <b>Price :</b> Rs. 142
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -473,14 +662,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
@@ -492,9 +705,12 @@
             <!-- enter image and its Description -->
 
             <div class="card shadow-sm">
-              <img src="#" alt="prod 9" width="100%" height="225" />
+              <img src="rice.jpg" alt="prod 9" width="100%" height="225" />
               <div class="card-body">
-                <h5 class="card-text">Product Description .</h5>
+                <h5 class="card-text">
+                  Daawat Traditional Basmati Rice 5kg<br />
+                  <b>Price :</b> Rs. 750
+                </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button
@@ -518,14 +734,38 @@
                           const quantityDiv = document.createElement("div");
                           quantityDiv.className = "quantity-buttons";
 
-                          const mButton = document.createElement("button");
-                          mButton.textContent = "Go to cart";
-                          mButton.addEventListener("click", function () {
-                            window.location.href =
-                              "https://ojasvi886.github.io/Sparkathon_Repo/templetes/cart.html";
+                          const minusButton = document.createElement("button");
+                          minusButton.textContent = "-";
+                          minusButton.addEventListener("click", function () {
+                            if (quantity > 1) {
+                              quantity--;
+                              quantitySpan.textContent = quantity;
+                            }
                           });
-                          quantityDiv.appendChild(mButton);
+
+                          const quantitySpan = document.createElement("span");
+                          let quantity = 1;
+                          quantitySpan.textContent = quantity;
+
+                          const plusButton = document.createElement("button");
+                          plusButton.textContent = "+";
+                          plusButton.addEventListener("click", function () {
+                            quantity++;
+                            quantitySpan.textContent = quantity;
+                          });
+
+                          quantityDiv.appendChild(minusButton);
+                          quantityDiv.appendChild(quantitySpan);
+                          quantityDiv.appendChild(plusButton);
+
+                          // Replace the "Add to Cart" button with the quantity buttons
                           addToCartButton.replaceWith(quantityDiv);
+
+                          minusButton.addEventListener("click", function () {
+                            if (quantity == 1) {
+                              quantityDiv.replaceWith(addToCartButton);
+                            }
+                          });
                         });
                     </script>
                   </div>
