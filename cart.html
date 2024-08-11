@@ -39,19 +39,19 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/logged_in.html"
+                href="https://ojasvi886.github.io/sparakthon_/logged_in.html"
                 >Home</a
               >
 
               <!-- Home link is added--logged_in.html -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/bill.html">Bill</a>
+              <a class="nav-link" href="https://ojasvi886.github.io/sparakthon_/bill.html">Bill</a>
 
               <!-- Bill link is added-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/history.html">History</a>
+              <a class="nav-link" href="https://ojasvi886.github.io/sparakthon_/history.html">History</a>
 
               <!-- History link is added-->
             </li>
@@ -68,45 +68,54 @@
     </div>
 
     <div style="margin: 2em;">
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Kurkure Masala Munch</h6>
+            <small class="text-body-secondary">Quantity : 4</small>
+          </div>
+          <span class="text-body-secondary">Rs. 40</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Coca Cola</h6>
+            <small class="text-body-secondary">Quantity : 2</small>
+          </div>
+          <span class="text-body-secondary">Rs. 80</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Surf Excel Easy Wash 1/2 kg</h6>
+            <small class="text-body-secondary">Quantity : 1</small>
+          </div>
+          <span class="text-body-secondary">Rs. 79</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span><b>Total (INR)</b></span>
+          <strong>Rs. 199</strong>
+        </li>
+      </ul>
     </div>
 
-    <div style="margin: 2em;">
-          <hr class="my-4">
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-
-          <!-- add razorpay here -->
-
-          <hr>
-          <button class="w-100 btn btn-primary btn-lg" ><a href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/items.html" style="text-decoration: none; color: aliceblue; cursor: pointer;">Go to Items</a> </button>
-
+    <div id="checkoutSection" style="margin: 2em;">
+      <hr class="my-4">
+      <button class="w-100 btn btn-primary btn-lg" type="button" onclick="showQRCode()">Continue to checkout</button>
+      <hr>
+      <button class="w-100 btn btn-primary btn-lg" ><a href="https://ojasvi886.github.io/sparakthon_/items.html" style="text-decoration: none; color: aliceblue; cursor: pointer;">Go to Items</a> </button>
     </div>
+
+    <script>
+      function showQRCode() {
+        alert("Proceeding to Payment Gateway");
+        document.getElementById('checkoutSection').style.display = 'none';
+        const qrCode = document.createElement('div');
+        qrCode.style.textAlign = 'center';
+        qrCode.innerHTML = '<img src="qr.jpg" height="250em" alt="QR Code"><p><b>Scan to Verify</b></p>';
+        document.body.appendChild(qrCode);
+        
+      }
+    </script>
+    
 
     <!-- FOOTER -->
 
