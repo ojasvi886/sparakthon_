@@ -39,7 +39,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/inventory.html"
+                href="https://ojasvi886.github.io/sparakthon_/inventory.html"
                 >Inventory</a
               >
 
@@ -49,26 +49,90 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="https://ojasvi886.github.io/Sparkathon_Repo/templetes/sales.html"
+                  href="https://ojasvi886.github.io/sparakthon_/sales.html"
                   >Sales</a
                 >
   
                 <!-- Sales is added -->
               </li>
           </ul>
+          <button class="btn btn-outline-success" type="submit">
+            Scan the QR
+          </button>
         </div>
       </div>
     </nav>
 
     <!-- Body -->
+      <hr>
 
     <div>
       <h2 style="margin-left: 1em; margin-top: 1em"><u><i>Please verify all the items.</i></u></h2>
-      <p style="margin-left: 4em; margin-top: 2em">
-        No items to display .
-      </p>
+        <!-- <i><u>Bill Verification Status :</u></i>
+        <span style="color: green; margin-left: 2em;">Verified</span> -->
+        <div style="margin: 2em">
+          <h4>
+            <i><u>Bill Details (SAMPLE) :</u></i>
+          </h4>
+           <br>
+          <div style="margin: 2em;">
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Aashirvaad Select Aata</h6>
+                  <small class="text-body-secondary">Quantity : 2</small>
+                </div>
+                <span class="text-body-secondary">Rs. 518</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Fortune Kachi Ghani Mustard Oil 1L</h6>
+                  <small class="text-body-secondary">Quantity : 2</small>
+                </div>
+                <span class="text-body-secondary">Rs. 284</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">One Plus Nord CE 3 5G</h6>
+                  <small class="text-body-secondary">Quantity : 1</small>
+                </div>
+                <span class="text-body-secondary">Rs. 24,999</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Men Casual Jeans</h6>
+                  <small class="text-body-secondary">Quantity : 2</small>
+                </div>
+                <span class="text-body-secondary">Rs. 2,198</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span><b>Total (INR)</b></span>
+                <strong>Rs. 27,999</strong>
+              </li>
+            </ul>
+          </div>
+        <div
+        style="
+          margin: 2em;
+        "
+        id="verifysection"
+       >
+        <button class="w-100 btn btn-danger btn-lg" type="submit" id="verify" onclick="clicks()"> 
+          Verify the Bill
+        </button>
+      </div>
+      </div>
     </div>
     <hr>
+
+    <script>
+      function clicks()
+      {
+        document.getElementById("verify").style.display = "none";
+        alert("Bill Verified");
+        document.getElementById("verifysection").innerHTML="<h4><i><u>Bill Verification Status :</u></i><span style='color: green; margin-left: 2em;'>Verified</span></h4>";
+      }
+    </script>
     
     <!-- FOOTER -->
 
