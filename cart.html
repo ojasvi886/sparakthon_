@@ -50,6 +50,11 @@
 
               <!-- History link is added-->
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://ojasvi886.github.io/sparakthon_/bill.html">Bill</a>
+
+              <!-- Bill link is added-->
+            </li>
           </ul>
         </div>
       </div>
@@ -109,12 +114,7 @@
     <script>
       function showQRCode() {
         alert("Proceeding to Payment Gateway");
-        document.getElementById('checkoutSection').style.display = 'none';
-        const qrCode = document.createElement('div');
-        qrCode.style.textAlign = 'center';
-        qrCode.innerHTML = '<h2><b><u><i>Sample QR:</i></u></b></h2><br><img src="qr.jpg" height="250em" alt="QR Code"><p><b>Scan to Verify</b></p><h2 style="margin-bottom : 2em"><b><u>Counter No : 5 <br> Queue No : 3 </u></b></h2>';
-        document.body.appendChild(qrCode);
-        
+        window.location.href = "https://ojasvi886.github.io/sparakthon_/bill.html";
       }
     </script>
     
